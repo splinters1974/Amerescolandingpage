@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ameresco UK | Britain's Net Zero Partner of Choice</title>
+  <meta name="description" content="Ameresco UK delivers end-to-end decarbonisation solutions across public sector, cities, industrial & commercial, grid-scale generation, data centres and microgrids." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+
+    /* ─── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --green:        #42B649;
+      --green-dark:   #2D8A32;
+      --green-mid:    #37A03D;
+      --green-light:  #7DD483;
+      --green-pale:   rgba(66,182,73,0.08);
+      --navy:         #1C3254;
+      --navy-dark:    #0F1F35;
+      --navy-mid:     #243B5A;
+      --navy-light:   #2E4E72;
+      --white:        #FFFFFF;
+      --off-white:    #F5F7FA;
+      --mid-gray:     #E8ECF2;
+      --text-dark:    #0D1B2A;
+      --text-mid:     #4A5568;
+      --text-light:   #718096;
+      --radius-sm:    6px;
+      --radius-md:    12px;
+      --radius-lg:    20px;
+      --shadow-sm:    0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md:    0 8px 28px rgba(0,0,0,0.10);
+      --shadow-lg:    0 20px 56px rgba(0,0,0,0.15);
+      --transition:   0.25s ease;
+    }
+
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+    h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; line-height: 1.1; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+
+    .section-body {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+    }
+
+    /* ─── BUTTONS ────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.2px;
+      padding: 14px 30px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .btn svg { flex-shrink: 0; transition: transform var(--transition); }
+    .btn:hover svg { transform: translateX(3px); }
+
+    .btn-green {
+      background: var(--green);
+      color: var(--white);
+      border-color: var(--green);
+    }
+    .btn-green:hover {
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+      box-shadow: 0 8px 24px rgba(66,182,73,0.35);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost-white {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.45);
+    }
+    .btn-ghost-white:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--navy-dark);
+      border-color: var(--white);
+    }
+    .btn-white:hover {
+      background: var(--navy-dark);
+      color: var(--white);
+      border-color: var(--navy-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost-green {
+      background: transparent;
+      color: var(--green);
+      border-color: rgba(66,182,73,0.4);
+    }
+    .btn-ghost-green:hover {
+      background: var(--green-pale);
+      border-color: var(--green);
+    }
+
+    /* ─── SCROLL ANIMATIONS ──────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ═══════════════════════════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════════════════════════ */
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 900;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      padding: 0 48px;
+      justify-content: space-between;
+      background: rgba(15, 31, 53, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(66,182,73,0.25);
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+    #nav.scrolled {
+      background: rgba(15, 31, 53, 0.98);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo-mark {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+    .nav-logo-wordmark {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.25rem;
+      color: var(--white);
+      letter-spacing: -0.5px;
+    }
+    .nav-logo-wordmark span { color: var(--green); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.78);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover {
+      color: var(--white);
+      background: rgba(255,255,255,0.06);
+    }
+    .nav-links .nav-cta {
+      margin-left: 8px;
+      background: var(--green);
+      color: var(--white);
+      font-weight: 700;
+      padding: 9px 20px;
+    }
+    .nav-links .nav-cta:hover {
+      background: var(--green-dark);
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════════════════ */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 72px;
+      background: var(--navy-dark);
+      overflow: hidden;
+    }
+
+    /* layered background */
+    .hero-bg-gradient {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 75% 50%, rgba(28,50,84,0.9) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 10% 90%, rgba(66,182,73,0.07) 0%, transparent 60%),
+        linear-gradient(135deg, #070E1A 0%, #0F1F35 45%, #162840 100%);
+    }
+
+    .hero-grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(66,182,73,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66,182,73,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    .hero-glow-top {
+      position: absolute;
+      top: -120px;
+      right: 10%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(66,182,73,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-glow-bottom {
+      position: absolute;
+      bottom: -100px;
+      left: 5%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(28,50,84,0.6) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 80px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    /* left column */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(66,182,73,0.12);
+      border: 1px solid rgba(66,182,73,0.35);
+      color: var(--green-light);
+      padding: 6px 16px 6px 10px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      margin-bottom: 28px;
+    }
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: badge-pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes badge-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(1.6); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 4.5vw, 4rem);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -1.5px;
+      line-height: 1.05;
+      margin-bottom: 26px;
+    }
+    .hero-title .accent { color: var(--green); }
+    .hero-title .underline-green {
+      position: relative;
+      display: inline-block;
+    }
+    .hero-title .underline-green::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.68);
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 52px;
+    }
+
+    .hero-proof {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-proof-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+    }
+    .hero-proof-item svg { flex-shrink: 0; }
+    .hero-proof-item strong {
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+    }
+    .hero-proof-sep {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* right column – animated SVG hub */
+    .hero-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .hero-diagram svg {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      filter: drop-shadow(0 0 40px rgba(66,182,73,0.12));
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       STATS BAR
+    ═══════════════════════════════════════════════════════════ */
+    #stats {
+      background: var(--green);
+      position: relative;
+      overflow: hidden;
+    }
+    #stats::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .stats-inner {
+      position: relative;
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat-item {
+      padding: 44px 40px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      transition: background var(--transition);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item:hover { background: rgba(255,255,255,0.06); }
+
+    .stat-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+    .stat-value .stat-prefix,
+    .stat-value .stat-suffix {
+      font-size: 0.65em;
+      vertical-align: middle;
+      font-weight: 700;
+      opacity: 0.85;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.45;
+      font-weight: 500;
+    }
+    .stat-sublabel {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 4px;
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 60px 40px;
+      }
+      .hero-diagram { display: none; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(1),
+      .stat-item:nth-child(2) {
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+      }
+    }
+
+    @media (max-width: 768px) {
+      #nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero-inner { padding: 48px 20px; }
+      .hero-title { font-size: 2.4rem; letter-spacing: -0.8px; }
+      .hero-proof { flex-wrap: wrap; gap: 12px; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .stat-item { padding: 28px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.2); }
+      .stat-item:last-child { border-bottom: none; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+
+  <a href="#hero" class="nav-logo" aria-label="Ameresco UK home">
+    <!-- logomark -->
+    <svg class="nav-logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="36" height="36" rx="7" fill="#42B649"/>
+      <!-- stylised A / energy bolt -->
+      <path d="M18 6 L10 28 H14.5 L18 20 L21.5 28 H26 L18 6Z" fill="white" opacity="0.15"/>
+      <path d="M20 6 L12 21 H17 L14 30 L26 16 H20.5 L24 6Z" fill="white"/>
+    </svg>
+    <span class="nav-logo-wordmark">AMER<span>ESCO</span> UK</span>
+  </a>
+
+  <ul class="nav-links" role="list">
+    <li><a href="#sectors">Markets</a></li>
+    <li><a href="#delivery">Our Approach</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#why">Why Ameresco</a></li>
+    <li><a href="#investors">Investors</a></li>
+    <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
+  </ul>
+
+  <button class="nav-hamburger" aria-label="Open menu" id="navHamburger">
+    <span></span><span></span><span></span>
+  </button>
+
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero">
+
+  <div class="hero-bg-gradient" aria-hidden="true"></div>
+  <div class="hero-grid-pattern"  aria-hidden="true"></div>
+  <div class="hero-glow-top"      aria-hidden="true"></div>
+  <div class="hero-glow-bottom"   aria-hidden="true"></div>
+
+  <div class="hero-inner">
+
+    <!-- Left: copy -->
+    <div class="hero-copy">
+
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        NYSE: AMRC &nbsp;·&nbsp; UK Operations &nbsp;·&nbsp; Est. 2000
+      </div>
+
+      <h1 class="hero-title">
+        Britain's<br>
+        Partner for<br>
+        <span class="underline-green">Net&nbsp;Zero</span><br>
+        <span class="accent">Transformation</span>
+      </h1>
+
+      <p class="hero-sub">
+        From council chambers to the national grid — Ameresco finances, designs, builds and operates decarbonisation infrastructure that delivers measurable results. We don't just advise. <strong style="color:rgba(255,255,255,0.88);">We deliver.</strong>
+      </p>
+
+      <div class="hero-actions">
+        <a href="#sectors" class="btn btn-green">
+          Explore Our Markets
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost-white">Talk to Our Team</a>
+      </div>
+
+      <div class="hero-proof" aria-label="Key credentials">
+        <div class="hero-proof-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M13 4L6.5 11 3 7.5" stroke="#42B649" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span><strong>25+ years</strong> global ESCO expertise</span>
+        </div>
+        <div class="hero-proof-sep"></div>
+        <div class="hero-proof-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M13 4L6.5 11 3 7.5" stroke="#42B649" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span><strong>Full lifecycle</strong> ownership</span>
+        </div>
+        <div class="hero-proof-sep"></div>
+        <div class="hero-proof-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M13 4L6.5 11 3 7.5" stroke="#42B649" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span><strong>Off-balance-sheet</strong> finance available</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: animated hub diagram -->
+    <div class="hero-diagram" aria-hidden="true">
+      <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="#42B649" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#42B649" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stop-color="#42B649" stop-opacity="0"/>
+            <stop offset="50%"  stop-color="#42B649" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="#42B649" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+
+        <!-- outermost decorative rings -->
+        <circle cx="250" cy="250" r="230" stroke="rgba(66,182,73,0.07)" stroke-width="1"/>
+        <circle cx="250" cy="250" r="195" stroke="rgba(66,182,73,0.10)" stroke-width="1" stroke-dasharray="6 5"/>
+        <!-- spinning dashed ring -->
+        <circle cx="250" cy="250" r="195" stroke="rgba(66,182,73,0.30)" stroke-width="1.5"
+                stroke-dasharray="22 14">
+          <animateTransform attributeName="transform" type="rotate"
+                            from="0 250 250" to="360 250 250"
+                            dur="30s" repeatCount="indefinite"/>
+        </circle>
+        <!-- inner ring -->
+        <circle cx="250" cy="250" r="155" stroke="rgba(66,182,73,0.08)" stroke-width="1"/>
+
+        <!-- hub glow -->
+        <circle cx="250" cy="250" r="90" fill="url(#hubGlow)"/>
+
+        <!-- hub body -->
+        <circle cx="250" cy="250" r="72" fill="#0F1F35" stroke="#42B649" stroke-width="2"/>
+        <circle cx="250" cy="250" r="60" fill="rgba(66,182,73,0.07)"/>
+
+        <!-- hub icon – energy bolt -->
+        <path d="M256 220 L240 252 H252 L244 280 L272 244 H258 L270 220Z"
+              fill="#42B649" filter="url(#glow)" opacity="0.95"/>
+
+        <!-- ── NODE POSITIONS (6 nodes on a circle r=195) ──
+             0°=top, clockwise: Public, Cities, I&C, Grid, DataCentres, Microgrids
+             Angles: 270°, 330°, 30°, 90°, 150°, 210°
+             Using: (250+195·cos θ, 250+195·sin θ)
+        -->
+
+        <!-- spokes from hub edge (r=72) to node edge (r=165) -->
+        <!-- Public Sector 270° → (250, 55) -->
+        <line x1="250" y1="178" x2="250" y2="82" stroke="rgba(66,182,73,0.35)" stroke-width="1.5"/>
+        <!-- Cities 330° → (419, 152) actually let me recalc: 330° = cos(330)=0.866, sin(330)=-0.5 → 420,152 -->
+        <line x1="320" y1="188" x2="419" y2="153" stroke="rgba(66,182,73,0.35)" stroke-width="1.5"/>
+        <!-- I&C 30° → cos(30)=0.866, sin(30)=0.5 → 419, 348 -->
+        <line x1="320" y1="313" x2="419" y2="348" stroke="rgba(66,182,73,0.35)" stroke-width="1.5"/>
+        <!-- Grid Scale 90° → (250, 445) -->
+        <line x1="250" y1="322" x2="250" y2="419" stroke="rgba(66,182,73,0.35)" stroke-width="1.5"/>
+        <!-- Data Centres 150° → cos(150)=-0.866, sin(150)=0.5 → 81, 348 -->
+        <line x1="180" y1="313" x2="81" y2="348" stroke="rgba(66,182,73,0.22)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <!-- Microgrids 210° → cos(210)=-0.866, sin(210)=-0.5 → 81,152 -->
+        <line x1="180" y1="188" x2="81" y2="153" stroke="rgba(66,182,73,0.22)" stroke-width="1.5" stroke-dasharray="5 3"/>
+
+        <!-- ── NODE CIRCLES ── -->
+        <!-- Public Sector – top (250, 55) -->
+        <circle cx="250" cy="55" r="34" fill="#1C3254" stroke="#42B649" stroke-width="1.8"/>
+        <text x="250" y="49" text-anchor="middle" fill="#42B649" font-family="Montserrat,sans-serif" font-weight="700" font-size="8.5">PUBLIC</text>
+        <text x="250" y="60" text-anchor="middle" fill="#42B649" font-family="Montserrat,sans-serif" font-weight="700" font-size="8.5">SECTOR</text>
+
+        <!-- Cities – top-right (419, 152) -->
+        <circle cx="419" cy="152" r="34" fill="#1C3254" stroke="#42B649" stroke-width="1.8"/>
+        <text x="419" y="146" text-anchor="middle" fill="#42B649" font-family="Montserrat,sans-serif" font-weight="700" font-size="8.5">CITIES</text>
+        <text x="419" y="157" text-anchor="middle" fill="#42B649" font-family="Montserrat,sans-serif" font-weight="700" font-size="8.5">&amp; LOCAL</text>
+
+        <!-- I&C – bottom-right (419, 348) -->
+        <circle cx="419" cy="348" r="34" fill="#1C3254" stroke="#42B649" stroke-width="1.8"/>
+        <text x="419" y="342" text-anchor="middle" fill="#42B649" font-family="Montserrat,sans-serif" font-weight="700" font-size="8.5">INDUST.</text>
+        <text x="419" y="353" text-anchor="middle" fill="#42B649" font-family="Montserrat,sans-serif" font-weight="700" font-size="8.5">&amp; COMM.</text>
+
+        <!-- Grid Scale – bottom (250, 445) -->
+        <circle cx="250" cy="445" r="34" fill="#1C3254" stroke="#42B649" stroke-width="1.8"/>
+        <text x="250" y="439" text-anchor="middle" fill="#42B649" font-family="Montserrat,sans-serif" font-weight="700" font-size="8.5">GRID</text>
+        <text x="250" y="450" text-anchor="middle" fill="#42B649" font-family="Montserrat,sans-serif" font-weight="700" font-size="8.5">SCALE</text>
+
+        <!-- Data Centres – bottom-left (81, 348) -->
+        <circle cx="81" cy="348" r="34" fill="#162840" stroke="rgba(66,182,73,0.55)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <text x="81" y="342" text-anchor="middle" fill="#7DD483" font-family="Montserrat,sans-serif" font-weight="700" font-size="8.5">DATA</text>
+        <text x="81" y="353" text-anchor="middle" fill="#7DD483" font-family="Montserrat,sans-serif" font-weight="700" font-size="8.5">CENTRES</text>
+
+        <!-- Microgrids – top-left (81, 152) -->
+        <circle cx="81" cy="152" r="34" fill="#162840" stroke="rgba(66,182,73,0.55)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <text x="81" y="146" text-anchor="middle" fill="#7DD483" font-family="Montserrat,sans-serif" font-weight="700" font-size="8.5">MICRO</text>
+        <text x="81" y="157" text-anchor="middle" fill="#7DD483" font-family="Montserrat,sans-serif" font-weight="700" font-size="8.5">GRIDS</text>
+
+        <!-- "EMERGING" label between data & micro nodes -->
+        <text x="81" y="252" text-anchor="middle" fill="rgba(125,212,131,0.55)" font-family="Montserrat,sans-serif" font-weight="700" font-size="7.5" letter-spacing="1.5">EMERGING</text>
+
+        <!-- ── ANIMATED ENERGY PULSES ── -->
+        <!-- Public Sector spoke -->
+        <circle r="4.5" fill="#42B649" opacity="0">
+          <animateMotion dur="2.8s" repeatCount="indefinite" begin="0s"
+            path="M250,178 L250,82"/>
+          <animate attributeName="opacity" values="0;1;0" dur="2.8s" repeatCount="indefinite" begin="0s"/>
+        </circle>
+        <!-- Cities spoke -->
+        <circle r="4.5" fill="#42B649" opacity="0">
+          <animateMotion dur="3.2s" repeatCount="indefinite" begin="0.6s"
+            path="M320,188 L419,153"/>
+          <animate attributeName="opacity" values="0;1;0" dur="3.2s" repeatCount="indefinite" begin="0.6s"/>
+        </circle>
+        <!-- I&C spoke -->
+        <circle r="4.5" fill="#42B649" opacity="0">
+          <animateMotion dur="2.5s" repeatCount="indefinite" begin="1.2s"
+            path="M320,313 L419,348"/>
+          <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="1.2s"/>
+        </circle>
+        <!-- Grid spoke -->
+        <circle r="4.5" fill="#42B649" opacity="0">
+          <animateMotion dur="3s" repeatCount="indefinite" begin="0.4s"
+            path="M250,322 L250,419"/>
+          <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="0.4s"/>
+        </circle>
+        <!-- Data Centres spoke (dimmer) -->
+        <circle r="3.5" fill="#7DD483" opacity="0">
+          <animateMotion dur="3.6s" repeatCount="indefinite" begin="1.8s"
+            path="M180,313 L81,348"/>
+          <animate attributeName="opacity" values="0;0.7;0" dur="3.6s" repeatCount="indefinite" begin="1.8s"/>
+        </circle>
+        <!-- Microgrids spoke (dimmer) -->
+        <circle r="3.5" fill="#7DD483" opacity="0">
+          <animateMotion dur="3s" repeatCount="indefinite" begin="2.4s"
+            path="M180,188 L81,153"/>
+          <animate attributeName="opacity" values="0;0.7;0" dur="3s" repeatCount="indefinite" begin="2.4s"/>
+        </circle>
+
+        <!-- Central hub "breathe" -->
+        <circle cx="250" cy="250" r="72" fill="none" stroke="#42B649" stroke-width="1.5" opacity="0.4">
+          <animate attributeName="r"       values="72;80;72"     dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.4;0.1;0.4"  dur="4s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     STATS BAR
+═══════════════════════════════════════════════════════════ -->
+<section id="stats" aria-label="Key metrics">
+  <div class="stats-inner">
+
+    <div class="stat-item reveal">
+      <div class="stat-value">
+        <span class="stat-prefix">£</span><span class="stat-counter" data-target="1">1</span><span class="stat-suffix">bn+</span>
+      </div>
+      <div class="stat-label">Invested in UK Energy Infrastructure</div>
+      <div class="stat-sublabel">Across public, city &amp; grid-scale projects</div>
+    </div>
+
+    <div class="stat-item reveal reveal-delay-1">
+      <div class="stat-value">
+        <span class="stat-counter" data-target="300">300</span><span class="stat-suffix">MW</span>
+      </div>
+      <div class="stat-label">Grid-Scale Storage Under Deployment</div>
+      <div class="stat-sublabel">624 MWh — Atlantic Green BESS, UK</div>
+    </div>
+
+    <div class="stat-item reveal reveal-delay-2">
+      <div class="stat-value">
+        <span class="stat-counter" data-target="20">20</span><span class="stat-suffix">-Year</span>
+      </div>
+      <div class="stat-label">Long-Term Concession Partnerships</div>
+      <div class="stat-sublabel">Bristol City Leap — Net Zero by 2030</div>
+    </div>
+
+    <div class="stat-item reveal reveal-delay-3">
+      <div class="stat-value">
+        <span class="stat-counter" data-target="25">25</span><span class="stat-suffix">+</span>
+      </div>
+      <div class="stat-label">Years as a Leading Global ESCO</div>
+      <div class="stat-sublabel">NYSE: AMRC · Financial strength &amp; scale</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Chunks 2–5 will be appended below -->
+
+</body>
+</html>
