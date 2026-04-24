@@ -508,6 +508,1078 @@
       .stat-item:last-child { border-bottom: none; }
     }
 
+    /* ═══════════════════════════════════════════════════════════
+       CHUNK 2 — IMPERATIVE
+    ═══════════════════════════════════════════════════════════ */
+    #imperative {
+      padding: 110px 48px;
+      background: var(--off-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .imperative-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .imperative-quote {
+      border-left: 4px solid var(--green);
+      padding: 20px 28px;
+      background: white;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 28px 0 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .imperative-quote p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.6;
+      color: var(--navy);
+      font-style: italic;
+    }
+    .challenge-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .challenge-stat {
+      background: var(--navy);
+      border-radius: var(--radius-md);
+      padding: 32px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .challenge-stat:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .challenge-stat::after {
+      content: '';
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(66,182,73,0.08);
+    }
+    .challenge-stat-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+    .challenge-stat-label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.5;
+    }
+    .challenge-stat-sub {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.38);
+      margin-top: 6px;
+    }
+
+    /* ── SECTORS ── */
+    #sectors {
+      padding: 110px 48px;
+      background: var(--white);
+    }
+    .sectors-inner { max-width: 1380px; margin: 0 auto; }
+    .sectors-hdr {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 56px;
+    }
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .sector-card--wide { grid-column: span 2; }
+
+    .sector-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--mid-gray);
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .sector-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+
+    .sc-head {
+      height: 180px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .sector-card--wide .sc-head { height: 200px; }
+    .sc-head-bg { position: absolute; inset: 0; }
+    .sc-head-icon {
+      position: relative;
+      z-index: 2;
+      width: 72px; height: 72px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sector-card--wide .sc-head-icon {
+      position: absolute;
+      top: 24px; right: 24px;
+      width: 64px; height: 64px;
+    }
+    .sc-head-ticker {
+      display: none;
+      position: absolute;
+      bottom: 18px; left: 28px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      z-index: 2;
+    }
+    .sector-card--wide .sc-head-ticker { display: block; }
+
+    /* per-sector gradients */
+    .sc--public  .sc-head-bg { background: linear-gradient(145deg,#1A3A6C,#2B5080); }
+    .sc--cities  .sc-head-bg { background: linear-gradient(145deg,#1C2B5A,#2B3E7A); }
+    .sc--ic      .sc-head-bg { background: linear-gradient(145deg,#1A2A1C,#2D4A30); }
+    .sc--grid    .sc-head-bg { background: linear-gradient(145deg,#0F1F35,#0F3A30); }
+    .sc--dark    .sc-head-bg { background: linear-gradient(145deg,#0D1428,#1C1840); }
+
+    /* emerging badge */
+    .sc-emerging-badge {
+      position: absolute;
+      top: 14px; right: 14px;
+      z-index: 3;
+      background: rgba(125,212,131,0.15);
+      border: 1px solid rgba(125,212,131,0.45);
+      color: var(--green-light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    .sc-body {
+      padding: 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .sc-eyebrow {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+    .sc-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .sector-card--wide .sc-title { font-size: 1.45rem; }
+    .sc-desc {
+      font-size: 0.875rem;
+      line-height: 1.72;
+      color: var(--text-mid);
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .sc-stats-row {
+      display: flex;
+      gap: 28px;
+      padding: 16px 0;
+      border-top: 1px solid var(--mid-gray);
+      border-bottom: 1px solid var(--mid-gray);
+      margin-bottom: 16px;
+    }
+    .sc-stat-v {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+    }
+    .sc-stat-l {
+      font-size: 0.68rem;
+      color: var(--text-light);
+      margin-top: 3px;
+    }
+    .sc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+    .sc-tag {
+      background: var(--off-white);
+      color: var(--navy);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 100px;
+      border: 1px solid var(--mid-gray);
+    }
+    .sc-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--green);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      transition: gap var(--transition);
+    }
+    .sc-cta svg { transition: transform var(--transition); }
+    .sc-cta:hover { gap: 10px; }
+    .sc-cta:hover svg { transform: translateX(3px); }
+
+    /* emerging panel */
+    .sc--emerging-panel {
+      background: var(--navy-dark);
+      border-color: rgba(66,182,73,0.2);
+    }
+    .emerging-panel-body { padding: 28px; display: flex; flex-direction: column; gap: 0; flex: 1; }
+    .emerging-intro { margin-bottom: 28px; }
+    .emerging-intro p { font-size: 0.82rem; line-height: 1.6; color: rgba(255,255,255,0.5); margin-top: 8px; }
+    .emerging-badge {
+      display: inline-block;
+      background: rgba(125,212,131,0.12);
+      border: 1px solid rgba(125,212,131,0.4);
+      color: var(--green-light);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 14px;
+    }
+    .emerging-intro h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: white;
+    }
+    .emerging-item {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 24px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .emerging-item-icon {
+      width: 44px; height: 44px;
+      background: rgba(66,182,73,0.1);
+      border: 1px solid rgba(66,182,73,0.25);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .emerging-item h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .emerging-item p { font-size: 0.78rem; line-height: 1.6; color: rgba(255,255,255,0.48); }
+    .emerging-cta-wrap { padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); margin-top: auto; }
+
+    @media (max-width: 1024px) {
+      .imperative-inner { grid-template-columns: 1fr; gap: 48px; }
+      .sectors-grid { grid-template-columns: 1fr 1fr; }
+      .sector-card--wide { grid-column: span 2; }
+    }
+    @media (max-width: 768px) {
+      #imperative, #sectors { padding: 70px 20px; }
+      .sectors-grid { grid-template-columns: 1fr; }
+      .sector-card--wide { grid-column: span 1; }
+      .sc-stats-row { flex-wrap: wrap; gap: 16px; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       CHUNK 3 — DELIVERY MODEL
+    ═══════════════════════════════════════════════════════════ */
+    #delivery {
+      padding: 110px 48px;
+      background: var(--navy-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    #delivery::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(66,182,73,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66,182,73,0.03) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+    .delivery-inner { max-width: 1380px; margin: 0 auto; position: relative; z-index: 2; }
+    .delivery-hdr { text-align: center; max-width: 680px; margin: 0 auto 72px; }
+    .delivery-hdr .section-title { color: white; }
+    .delivery-hdr p { color: rgba(255,255,255,0.62); font-size: 1.05rem; line-height: 1.75; margin-top: 16px; }
+
+    .delivery-steps {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      position: relative;
+    }
+    .delivery-steps::before {
+      content: '';
+      position: absolute;
+      top: 43px;
+      left: calc(100% / 12);
+      width: calc(100% * 10/12);
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(66,182,73,0.55) 15%, rgba(66,182,73,0.55) 85%, transparent);
+      z-index: 0;
+    }
+    .dstep { text-align: center; padding: 0 10px; position: relative; z-index: 1; }
+    .dstep-node {
+      width: 86px; height: 86px;
+      border-radius: 50%;
+      background: var(--navy-mid);
+      border: 2px solid rgba(66,182,73,0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 22px;
+      transition: all var(--transition);
+      cursor: default;
+    }
+    .dstep:hover .dstep-node {
+      background: var(--green);
+      border-color: var(--green);
+      transform: scale(1.08);
+      box-shadow: 0 0 28px rgba(66,182,73,0.45);
+    }
+    .dstep-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.56rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--green);
+      transition: color var(--transition);
+    }
+    .dstep:hover .dstep-num { color: white; }
+    .dstep-icon { font-size: 1.45rem; line-height: 1; }
+    .dstep-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 9px;
+    }
+    .dstep-desc { font-size: 0.74rem; line-height: 1.55; color: rgba(255,255,255,0.48); }
+
+    .delivery-strip {
+      margin-top: 64px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .delivery-strip p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.82);
+      max-width: 520px;
+      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .delivery-strip p span { color: var(--green); }
+
+    /* ── PROJECTS ── */
+    #projects { padding: 110px 48px; background: var(--off-white); }
+    .projects-inner { max-width: 1380px; margin: 0 auto; }
+    .projects-hdr {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+      gap: 32px;
+    }
+    .projects-hdr .section-title { margin-bottom: 6px; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 24px;
+    }
+    .pcard {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+      min-height: 440px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .pcard-graphic { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+    .pcard-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to top, rgba(8,18,36,0.97) 0%, rgba(8,18,36,0.6) 55%, rgba(8,18,36,0.15) 100%);
+    }
+    .pcard-body { position: relative; z-index: 2; padding: 36px; }
+    .pcard-badge {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 13px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+    .pcard-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 12px;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
+    .pcard--sm .pcard-title { font-size: 1.4rem; }
+    .pcard-desc {
+      font-size: 0.875rem;
+      line-height: 1.72;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 22px;
+    }
+    .pcard-stats { display: flex; gap: 28px; margin-bottom: 26px; }
+    .ps-val {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+    }
+    .ps-lbl { font-size: 0.7rem; color: rgba(255,255,255,0.48); margin-top: 3px; }
+
+    @media (max-width: 1100px) {
+      .delivery-steps { grid-template-columns: repeat(3,1fr); }
+      .delivery-steps::before { display: none; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .pcard { min-height: 380px; }
+    }
+    @media (max-width: 768px) {
+      #delivery, #projects { padding: 70px 20px; }
+      .delivery-steps { grid-template-columns: repeat(2,1fr); gap: 24px 0; }
+      .delivery-strip { flex-direction: column; align-items: flex-start; }
+      .projects-hdr { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       CHUNK 4 — WHY AMERESCO + INVESTORS  (redesigned)
+    ═══════════════════════════════════════════════════════════ */
+
+    /* ── Promise banner ── */
+    #why { background: var(--white); }
+    .why-promise {
+      background: var(--navy-dark);
+      padding: 100px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-promise::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(66,182,73,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66,182,73,0.04) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+    .why-promise::after {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(66,182,73,0.08) 0%, transparent 65%);
+    }
+    .why-promise-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .why-promise-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 900;
+      color: white;
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+    .why-promise-title .gtext { color: var(--green); }
+    .why-promise-sub {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.65);
+      max-width: 620px;
+      margin: 0 auto 40px;
+    }
+    .why-promise-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── 4 Differentiator columns ── */
+    .why-diffs-wrap {
+      border-bottom: 1px solid var(--mid-gray);
+    }
+    .why-diffs {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .why-diff {
+      padding: 56px 40px;
+      border-right: 1px solid var(--mid-gray);
+      transition: background var(--transition);
+    }
+    .why-diff:last-child { border-right: none; }
+    .why-diff:hover { background: var(--off-white); }
+    .why-diff-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.8rem;
+      font-weight: 900;
+      color: rgba(66,182,73,0.12);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+    .why-diff h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .why-diff p {
+      font-size: 0.875rem;
+      line-height: 1.72;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+    }
+    .why-diff-proof {
+      padding: 12px 16px;
+      background: rgba(66,182,73,0.07);
+      border-left: 3px solid var(--green);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.4;
+    }
+
+    /* ── Comparison strip ── */
+    .why-compare {
+      padding: 80px 48px;
+      background: var(--off-white);
+    }
+    .compare-inner { max-width: 1380px; margin: 0 auto; }
+    .compare-hdr { text-align: center; margin-bottom: 44px; }
+    .compare-hdr .section-title { font-size: clamp(1.6rem, 2.5vw, 2rem); }
+
+    .compare-table {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .compare-row {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .compare-row:last-child { border-bottom: none; }
+    .compare-row--head .compare-cell { padding: 20px 28px; }
+    .compare-cell {
+      padding: 22px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .compare-cell--dim {
+      background: var(--navy);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+    }
+    .compare-cell--trad {
+      background: rgba(20,32,52,0.92);
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+    .compare-cell--amer {
+      background: rgba(66,182,73,0.1);
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.88);
+      font-weight: 600;
+      border-left: 1px solid rgba(66,182,73,0.15);
+    }
+    .compare-row--head .compare-cell--dim  { background: var(--navy-mid); }
+    .compare-row--head .compare-cell--trad {
+      background: rgba(255,255,255,0.05);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      justify-content: center;
+    }
+    .compare-row--head .compare-cell--amer {
+      background: var(--green);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: white;
+      justify-content: center;
+    }
+    .compare-icon-cross { color: rgba(255,100,100,0.7); font-size: 1rem; flex-shrink: 0; }
+    .compare-icon-tick  { color: var(--green); font-size: 1rem; flex-shrink: 0; }
+
+    /* ── Investors ── */
+    #investors {
+      padding: 110px 48px;
+      background: var(--navy-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    #investors::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 80% at 90% 50%, rgba(28,50,84,0.6) 0%, transparent 65%),
+                  radial-gradient(ellipse 40% 50% at 10% 80%, rgba(66,182,73,0.05) 0%, transparent 60%);
+    }
+    .investors-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* NYSE ticker card */
+    .inv-ticker-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 24px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-md);
+      margin-bottom: 32px;
+    }
+    .inv-ticker-logo {
+      background: var(--green);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+    }
+    .inv-ticker-info strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: white;
+    }
+    .inv-ticker-info span { font-size: 0.75rem; color: rgba(255,255,255,0.45); }
+
+    .investors-copy .section-title { color: white; }
+    .investors-copy .section-body  { color: rgba(255,255,255,0.62); margin-bottom: 32px; }
+
+    /* investment thesis – numbered items */
+    .inv-thesis { display: flex; flex-direction: column; gap: 0; margin-bottom: 36px; }
+    .inv-thesis-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      transition: background var(--transition);
+    }
+    .inv-thesis-item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+    .inv-thesis-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: rgba(66,182,73,0.3);
+      line-height: 1;
+      padding-top: 2px;
+    }
+    .inv-thesis-item:hover .inv-thesis-num { color: var(--green); }
+    .inv-thesis-content h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 5px;
+    }
+    .inv-thesis-content p { font-size: 0.82rem; line-height: 1.6; color: rgba(255,255,255,0.5); }
+
+    /* metrics grid – 3 wide, 2 tall */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .metric-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      transition: all var(--transition);
+    }
+    .metric-card:hover { background: rgba(66,182,73,0.08); border-color: rgba(66,182,73,0.3); transform: translateY(-3px); }
+    .metric-card--accent {
+      background: rgba(66,182,73,0.08);
+      border-color: rgba(66,182,73,0.25);
+      grid-column: span 3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 28px;
+    }
+    .metric-card--accent p { font-size: 0.82rem; color: rgba(255,255,255,0.55); max-width: 380px; line-height: 1.5; }
+    .metric-val {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+    .metric-card--accent .metric-val { font-size: 1.4rem; white-space: nowrap; }
+    .metric-lbl { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.4; }
+    .metric-sub { font-size: 0.65rem; color: rgba(255,255,255,0.28); margin-top: 4px; }
+
+    /* policy tailwinds banner */
+    .inv-policy {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+    }
+    .inv-policy-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      margin-bottom: 14px;
+    }
+    .inv-policy-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .inv-policy-tag {
+      background: rgba(66,182,73,0.1);
+      border: 1px solid rgba(66,182,73,0.2);
+      color: var(--green-light);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 5px 13px;
+      border-radius: 100px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    @media (max-width: 1100px) {
+      .why-diffs { grid-template-columns: repeat(2, 1fr); }
+      .why-diff:nth-child(2) { border-right: none; }
+      .why-diff:nth-child(3) { border-top: 1px solid var(--mid-gray); }
+      .investors-inner { grid-template-columns: 1fr; gap: 56px; }
+      .metrics-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .why-promise, .why-compare { padding: 70px 20px; }
+      .why-diffs { grid-template-columns: 1fr; }
+      .why-diff { border-right: none; border-top: 1px solid var(--mid-gray); }
+      .why-diff:first-child { border-top: none; }
+      .why-diff { padding: 40px 20px; }
+      #investors { padding: 70px 20px; }
+      .compare-row { grid-template-columns: 1fr; }
+      .compare-cell--trad, .compare-cell--dim { display: none; }
+      .compare-row--head .compare-cell--amer { grid-column: 1; border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+      .metric-card--accent { grid-column: span 2; flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+    @media (max-width: 480px) {
+      .metrics-grid { grid-template-columns: 1fr; }
+      .metric-card--accent { grid-column: span 1; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       CHUNK 5 — CTA + FOOTER
+    ═══════════════════════════════════════════════════════════ */
+    #contact {
+      padding: 120px 48px;
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 55%, #58CC5E 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 52px 52px;
+    }
+    #contact::after {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+    }
+    .contact-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .contact-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 100px;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 28px;
+    }
+    .contact-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 900;
+      color: white;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .contact-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.7;
+      margin-bottom: 48px;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 52px; }
+    .contact-options {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 40px;
+    }
+    .contact-option { text-align: center; }
+    .contact-option-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 6px;
+    }
+    .contact-option-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #070E1A;
+      padding: 72px 48px 32px;
+    }
+    .footer-inner { max-width: 1380px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+    .footer-brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .footer-brand-logo span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.15rem;
+      color: white;
+    }
+    .footer-brand-logo span em { color: var(--green); font-style: normal; }
+    .footer-brand p { font-size: 0.875rem; line-height: 1.75; color: rgba(255,255,255,0.45); max-width: 340px; }
+    .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+    .footer-social a {
+      width: 38px; height: 38px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.55);
+      transition: all var(--transition);
+    }
+    .footer-social a:hover { background: var(--green); border-color: var(--green); color: white; }
+    .footer-col h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+    }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.58);
+      transition: color var(--transition);
+    }
+    .footer-col ul li a:hover { color: var(--green); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+    .footer-bottom a { color: rgba(255,255,255,0.45); transition: color var(--transition); }
+    .footer-bottom a:hover { color: var(--green); }
+    .footer-certifications {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .footer-cert {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-sm);
+      padding: 5px 12px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    /* mobile nav overlay */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--navy-dark);
+      z-index: 800;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      transition: color var(--transition);
+    }
+    .mobile-nav a:hover { color: var(--green); }
+    .mobile-nav-close {
+      position: absolute;
+      top: 24px; right: 24px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    @media (max-width: 768px) {
+      #contact { padding: 80px 20px; }
+      footer { padding: 56px 20px 24px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: span 2; }
+    }
+    @media (max-width: 480px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: span 1; }
+      .contact-options { gap: 20px; }
+    }
+
   </style>
 </head>
 <body>
@@ -797,7 +1869,326 @@
   </div>
 </section>
 
-<!-- Chunks 2–5 will be appended below -->
+<!-- ═══════════════════════════════════════════════════════════
+     CHUNK 2 — THE IMPERATIVE
+═══════════════════════════════════════════════════════════ -->
+<section id="imperative" aria-labelledby="imperative-title">
+  <div class="imperative-inner">
+
+    <!-- Left: copy -->
+    <div class="imperative-copy reveal">
+      <span class="eyebrow">The Imperative</span>
+      <h2 id="imperative-title" class="section-title">
+        Britain's Carbon Clock<br>Is Ticking
+      </h2>
+      <p class="section-body">
+        The UK has legislated for net zero by 2050 — but targets without delivery are just aspiration. Public buildings still emit millions of tonnes of CO₂ annually. Cities face complex, multi-vector decarbonisation challenges. Industry struggles with cost and complexity. And the national grid needs new generation and storage capacity at a scale not seen since the post-war era.
+      </p>
+      <div class="imperative-quote">
+        <p>"The organisations that succeed will be those that find partners who can finance, design, build and operate — not just advise. The time for consulting is over. The time for delivery is now."</p>
+      </div>
+      <a href="#sectors" class="btn btn-green">
+        See How We Deliver
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Right: challenge stat cards -->
+    <div class="challenge-stats">
+
+      <div class="challenge-stat reveal reveal-delay-1">
+        <div class="challenge-stat-value">17%</div>
+        <div class="challenge-stat-label">of UK total emissions come from buildings &amp; heating</div>
+        <div class="challenge-stat-sub">The single largest addressable sector</div>
+      </div>
+
+      <div class="challenge-stat reveal reveal-delay-2">
+        <div class="challenge-stat-value">£1tn+</div>
+        <div class="challenge-stat-label">Investment needed across UK net zero infrastructure by 2050</div>
+        <div class="challenge-stat-sub">A generational capital deployment challenge</div>
+      </div>
+
+      <div class="challenge-stat reveal reveal-delay-1">
+        <div class="challenge-stat-value">8–10yr</div>
+        <div class="challenge-stat-label">Average grid connection wait time — driving demand for microgrids</div>
+        <div class="challenge-stat-sub">Worst backlogs concentrated in growth areas</div>
+      </div>
+
+      <div class="challenge-stat reveal reveal-delay-2">
+        <div class="challenge-stat-value">2050</div>
+        <div class="challenge-stat-label">UK Net Zero deadline — less than 24 years away</div>
+        <div class="challenge-stat-sub">Every year of inaction compounds the cost</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHUNK 2 — MARKET SECTORS
+═══════════════════════════════════════════════════════════ -->
+<section id="sectors" aria-labelledby="sectors-title">
+  <div class="sectors-inner">
+
+    <div class="sectors-hdr reveal">
+      <span class="eyebrow">Our Markets</span>
+      <h2 id="sectors-title" class="section-title">Serving Every Dimension of Decarbonisation</h2>
+      <p class="section-body">Five core markets. One consistent promise: end-to-end delivery with performance guarantees and long-term accountability.</p>
+    </div>
+
+    <div class="sectors-grid">
+
+      <!-- ── PUBLIC SECTOR ── -->
+      <div class="sector-card sc--public reveal">
+        <div class="sc-head">
+          <div class="sc-head-bg"></div>
+          <div class="sc-head-icon">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+              <path d="M17 3L3 11h28L17 3Z" stroke="white" stroke-width="1.5" stroke-linejoin="round" fill="rgba(255,255,255,0.1)"/>
+              <rect x="3" y="11" width="28" height="18" stroke="white" stroke-width="1.5" fill="rgba(255,255,255,0.05)"/>
+              <line x1="9"  y1="11" x2="9"  y2="29" stroke="white" stroke-width="1"/>
+              <line x1="14" y1="11" x2="14" y2="29" stroke="white" stroke-width="1"/>
+              <line x1="20" y1="11" x2="20" y2="29" stroke="white" stroke-width="1"/>
+              <line x1="25" y1="11" x2="25" y2="29" stroke="white" stroke-width="1"/>
+              <rect x="13" y="20" width="8" height="9" fill="rgba(255,255,255,0.18)" stroke="white" stroke-width="1"/>
+              <rect x="2"  y="29" width="30" height="3" rx="1" fill="rgba(255,255,255,0.4)"/>
+            </svg>
+          </div>
+        </div>
+        <div class="sc-body">
+          <span class="sc-eyebrow">Public Sector</span>
+          <h3 class="sc-title">NHS, Councils &amp; Education</h3>
+          <p class="sc-desc">With billions in Public Sector Decarbonisation Scheme funding available and Net Zero Carbon commitments under scrutiny from auditors and residents alike, public bodies need a proven delivery partner — not another consultant. Ameresco combines grant navigation, ESCO contracting and contractual performance guarantees to unlock estate-wide transformation at pace, off balance sheet.</p>
+          <div class="sc-tags">
+            <span class="sc-tag">PSDS Funding</span>
+            <span class="sc-tag">Energy Performance Contracts</span>
+            <span class="sc-tag">Heat Pumps</span>
+            <span class="sc-tag">Solar PV &amp; Storage</span>
+            <span class="sc-tag">BEMS</span>
+            <span class="sc-tag">LED &amp; Fabric</span>
+          </div>
+          <a href="#contact" class="sc-cta">
+            Public Sector Solutions
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── CITIES & LOCAL AUTHORITIES ── -->
+      <div class="sector-card sc--cities reveal reveal-delay-1">
+        <div class="sc-head">
+          <div class="sc-head-bg"></div>
+          <div class="sc-head-icon">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+              <rect x="2"  y="20" width="8"  height="12" stroke="white" stroke-width="1.5" fill="rgba(255,255,255,0.07)"/>
+              <rect x="12" y="10" width="10" height="22" stroke="white" stroke-width="1.5" fill="rgba(255,255,255,0.07)"/>
+              <rect x="24" y="16" width="8"  height="16" stroke="white" stroke-width="1.5" fill="rgba(255,255,255,0.07)"/>
+              <line x1="14" y1="6" x2="20" y2="6" stroke="white" stroke-width="1.2" opacity="0.5"/>
+              <line x1="17" y1="4" x2="17" y2="10" stroke="white" stroke-width="1.2" opacity="0.5"/>
+              <rect x="14" y="18" width="3" height="3" fill="rgba(255,255,255,0.45)"/>
+              <rect x="19" y="18" width="3" height="3" fill="rgba(255,255,255,0.45)"/>
+              <rect x="4"  y="22" width="3" height="3" fill="rgba(255,255,255,0.45)"/>
+              <rect x="25" y="19" width="3" height="3" fill="rgba(255,255,255,0.45)"/>
+              <line x1="0" y1="32" x2="34" y2="32" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            </svg>
+          </div>
+        </div>
+        <div class="sc-body">
+          <span class="sc-eyebrow">Cities &amp; Local Authorities</span>
+          <h3 class="sc-title">City-Scale Transformation</h3>
+          <p class="sc-desc">Our Bristol City Leap partnership is the most ambitious city decarbonisation concession in the UK: a 20-year partnership, £1bn of inward investment and a net zero target of 2030. Ameresco can structure, finance and operate whole-city energy infrastructure — from district heating networks to smart energy systems — through a single, accountable partnership.</p>
+          <div class="sc-tags">
+            <span class="sc-tag">City Concessions</span>
+            <span class="sc-tag">District Heating</span>
+            <span class="sc-tag">Heat Networks</span>
+            <span class="sc-tag">Smart Energy Systems</span>
+            <span class="sc-tag">EV Infrastructure</span>
+          </div>
+          <a href="#contact" class="sc-cta">
+            Cities &amp; Local Authority Solutions
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── INDUSTRIAL & COMMERCIAL ── -->
+      <div class="sector-card sc--ic reveal reveal-delay-2">
+        <div class="sc-head">
+          <div class="sc-head-bg"></div>
+          <div class="sc-head-icon">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+              <rect x="2"  y="18" width="14" height="14" stroke="white" stroke-width="1.5" fill="rgba(255,255,255,0.06)"/>
+              <rect x="18" y="22" width="14" height="10" stroke="white" stroke-width="1.5" fill="rgba(255,255,255,0.06)"/>
+              <rect x="5"  y="10" width="5"  height="10" stroke="white" stroke-width="1.2" fill="rgba(255,255,255,0.04)"/>
+              <path d="M5 10 Q7.5 5 10 10" stroke="rgba(255,255,255,0.5)" stroke-width="1" fill="none"/>
+              <path d="M18 22 L20 18 H32 V22" stroke="white" stroke-width="1.2" fill="rgba(255,255,255,0.12)"/>
+              <line x1="22" y1="18" x2="22" y2="22" stroke="white" stroke-width="1"/>
+              <line x1="26" y1="18" x2="26" y2="22" stroke="white" stroke-width="1"/>
+              <line x1="30" y1="18" x2="30" y2="22" stroke="white" stroke-width="1"/>
+              <rect x="6"  y="24" width="5"  height="8" fill="rgba(255,255,255,0.2)"/>
+              <rect x="21" y="24" width="3"  height="3" fill="rgba(255,255,255,0.3)"/>
+              <rect x="26" y="24" width="3"  height="3" fill="rgba(255,255,255,0.3)"/>
+            </svg>
+          </div>
+        </div>
+        <div class="sc-body">
+          <span class="sc-eyebrow">Industrial &amp; Commercial</span>
+          <h3 class="sc-title">Factories, Logistics &amp; Offices</h3>
+          <p class="sc-desc">Industrial decarbonisation is complex — but the business case is compelling. Ameresco delivers on-site renewable generation, process heat decarbonisation, demand flexibility and long-term energy management, with financing structures that remove capital barriers entirely. We manage the complexity so you can focus on your core business.</p>
+          <div class="sc-tags">
+            <span class="sc-tag">On-Site Solar &amp; Storage</span>
+            <span class="sc-tag">CHP &amp; Heat Recovery</span>
+            <span class="sc-tag">Process Decarbonisation</span>
+            <span class="sc-tag">Demand Flexibility</span>
+            <span class="sc-tag">EPC Contracts</span>
+          </div>
+          <a href="#contact" class="sc-cta">
+            Industrial &amp; Commercial Solutions
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── GRID SCALE — spans 2 columns ── -->
+      <div class="sector-card sc--grid sector-card--wide reveal">
+        <div class="sc-head">
+          <div class="sc-head-bg"></div>
+          <!-- subtle animated grid / energy-wave SVG background -->
+          <svg width="100%" height="100%" viewBox="0 0 700 200" preserveAspectRatio="xMidYMid slice"
+               style="position:absolute;inset:0;opacity:0.22;pointer-events:none" aria-hidden="true">
+            <line x1="0" y1="50"  x2="700" y2="50"  stroke="#42B649" stroke-width="0.7"/>
+            <line x1="0" y1="100" x2="700" y2="100" stroke="#42B649" stroke-width="0.7"/>
+            <line x1="0" y1="150" x2="700" y2="150" stroke="#42B649" stroke-width="0.7"/>
+            <line x1="100" y1="0" x2="100" y2="200" stroke="#42B649" stroke-width="0.7"/>
+            <line x1="200" y1="0" x2="200" y2="200" stroke="#42B649" stroke-width="0.7"/>
+            <line x1="350" y1="0" x2="350" y2="200" stroke="#42B649" stroke-width="0.7"/>
+            <line x1="500" y1="0" x2="500" y2="200" stroke="#42B649" stroke-width="0.7"/>
+            <line x1="600" y1="0" x2="600" y2="200" stroke="#42B649" stroke-width="0.7"/>
+            <polyline points="0,120 80,90 160,60 240,105 320,45 400,80 480,38 560,72 640,55 700,65"
+                      fill="none" stroke="#42B649" stroke-width="2.5" opacity="0.9">
+              <animate attributeName="points"
+                values="0,120 80,90 160,60 240,105 320,45 400,80 480,38 560,72 640,55 700,65;
+                        0,100 80,65 160,88 240,42 320,70 400,50 480,80 560,35 640,70 700,45;
+                        0,120 80,90 160,60 240,105 320,45 400,80 480,38 560,72 640,55 700,65"
+                dur="6s" repeatCount="indefinite"/>
+            </polyline>
+          </svg>
+          <div class="sc-head-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <circle cx="16" cy="16" r="12" stroke="white" stroke-width="1.5" fill="rgba(255,255,255,0.05)"/>
+              <path d="M18 5L10 18h6L14 27 24 14h-6L18 5Z" fill="white" opacity="0.9"/>
+            </svg>
+          </div>
+          <span class="sc-head-ticker">Atlantic Green BESS &nbsp;·&nbsp; 300 MW / 624 MWh &nbsp;·&nbsp; Live UK Deployment</span>
+        </div>
+        <div class="sc-body">
+          <span class="sc-eyebrow">Front of the Meter</span>
+          <h3 class="sc-title">Utility-Scale Generation &amp; Storage</h3>
+          <p class="sc-desc">Britain needs gigawatts of new clean generation and grid-scale storage — and it needs it now. Ameresco develops, finances, builds and operates large-scale solar, wind and battery storage assets that earn revenue, stabilise the grid and accelerate the energy transition. Our Atlantic Green BESS project — 300 MW / 624 MWh — is live proof of what we can deliver.</p>
+          <div class="sc-stats-row">
+            <div>
+              <div class="sc-stat-v">300MW</div>
+              <div class="sc-stat-l">Battery Power — Atlantic Green</div>
+            </div>
+            <div>
+              <div class="sc-stat-v">624MWh</div>
+              <div class="sc-stat-l">Energy Storage Capacity</div>
+            </div>
+            <div>
+              <div class="sc-stat-v">300MWp</div>
+              <div class="sc-stat-l">Solar — Sonnedix / Aria Portfolio</div>
+            </div>
+          </div>
+          <div class="sc-tags">
+            <span class="sc-tag">Utility-Scale Solar</span>
+            <span class="sc-tag">Grid-Scale BESS</span>
+            <span class="sc-tag">Grid Services &amp; FFR</span>
+            <span class="sc-tag">DNO / TSO Interface</span>
+            <span class="sc-tag">Revenue Optimisation</span>
+            <span class="sc-tag">Asset Finance</span>
+          </div>
+          <a href="#contact" class="sc-cta">
+            Grid-Scale Solutions
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── EMERGING: DATA CENTRES + MICROGRIDS ── -->
+      <div class="sector-card sc--emerging-panel reveal reveal-delay-1">
+        <div class="emerging-panel-body">
+
+          <div class="emerging-intro">
+            <span class="emerging-badge">Emerging Markets</span>
+            <h3>Next-Generation Energy Challenges</h3>
+            <p>Two of the fastest-growing energy demands in the UK — and two areas where Ameresco's integrated capabilities put us ahead of the market.</p>
+          </div>
+
+          <!-- Data Centres -->
+          <div class="emerging-item">
+            <div class="emerging-item-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                <rect x="1" y="3"  width="20" height="5" rx="1.5" stroke="#42B649" stroke-width="1.5"/>
+                <rect x="1" y="10" width="20" height="5" rx="1.5" stroke="#42B649" stroke-width="1.5"/>
+                <rect x="1" y="17" width="20" height="5" rx="1.5" stroke="#42B649" stroke-width="1.5"/>
+                <circle cx="17" cy="5.5"  r="1" fill="#42B649"/>
+                <circle cx="17" cy="12.5" r="1" fill="#42B649"/>
+                <circle cx="17" cy="19.5" r="1" fill="#42B649"/>
+                <circle cx="14" cy="5.5"  r="1" fill="rgba(66,182,73,0.5)"/>
+                <circle cx="14" cy="12.5" r="1" fill="rgba(66,182,73,0.5)"/>
+                <circle cx="14" cy="19.5" r="1" fill="rgba(66,182,73,0.5)"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Data Centres</h4>
+              <p>With grid connection wait times of 8–10 years and AI-driven power demand surging, data centre operators need resilient, low-carbon energy independent of grid constraints. Ameresco delivers behind-the-meter generation and hybrid power architectures that bypass the queue entirely.</p>
+            </div>
+          </div>
+
+          <!-- Microgrids -->
+          <div class="emerging-item">
+            <div class="emerging-item-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                <circle cx="11" cy="11" r="3"  stroke="#42B649" stroke-width="1.5"/>
+                <circle cx="11" cy="3"  r="1.8" stroke="#42B649" stroke-width="1.2"/>
+                <circle cx="19" cy="7"  r="1.8" stroke="#42B649" stroke-width="1.2"/>
+                <circle cx="19" cy="15" r="1.8" stroke="#42B649" stroke-width="1.2"/>
+                <circle cx="11" cy="19" r="1.8" stroke="#42B649" stroke-width="1.2"/>
+                <circle cx="3"  cy="15" r="1.8" stroke="#42B649" stroke-width="1.2"/>
+                <circle cx="3"  cy="7"  r="1.8" stroke="#42B649" stroke-width="1.2"/>
+                <line x1="11" y1="8"  x2="11" y2="4.8"  stroke="rgba(66,182,73,0.55)" stroke-width="1"/>
+                <line x1="13.6" y1="9.4" x2="17.4" y2="7.4" stroke="rgba(66,182,73,0.55)" stroke-width="1"/>
+                <line x1="13.6" y1="12.6" x2="17.4" y2="14.6" stroke="rgba(66,182,73,0.55)" stroke-width="1"/>
+                <line x1="11" y1="14" x2="11" y2="17.2" stroke="rgba(66,182,73,0.55)" stroke-width="1"/>
+                <line x1="8.4" y1="12.6" x2="4.6" y2="14.6" stroke="rgba(66,182,73,0.55)" stroke-width="1"/>
+                <line x1="8.4" y1="9.4"  x2="4.6" y2="7.4"  stroke="rgba(66,182,73,0.55)" stroke-width="1"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Microgrids</h4>
+              <p>Ameresco's Microgrid-as-a-Service (MaaS) integrates solar, storage and smart controls into resilient local energy systems — from feasibility through to full operation. For campuses, industrial parks and communities seeking energy independence and long-term cost certainty.</p>
+            </div>
+          </div>
+
+          <div class="emerging-cta-wrap">
+            <a href="#contact" class="sc-cta" style="color:var(--green-light);">
+              Emerging Market Enquiries
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /sectors-grid -->
+  </div>
+</section>
+
+<!-- Chunks 3–5 will be appended below -->
 
 </body>
 </html>
