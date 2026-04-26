@@ -259,13 +259,20 @@
     }
 
     /* layered background */
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center 40%;
+    }
     .hero-bg-gradient {
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 70% 60% at 75% 50%, rgba(28,50,84,0.9) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 80% at 10% 90%, rgba(66,182,73,0.07) 0%, transparent 60%),
-        linear-gradient(135deg, #070E1A 0%, #0F1F35 45%, #162840 100%);
+        radial-gradient(ellipse 70% 60% at 75% 50%, rgba(28,50,84,0.88) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 10% 90%, rgba(66,182,73,0.06) 0%, transparent 60%),
+        linear-gradient(135deg, rgba(7,14,26,0.93) 0%, rgba(15,31,53,0.87) 45%, rgba(22,40,64,0.82) 100%);
     }
 
     .hero-grid-pattern {
@@ -998,7 +1005,18 @@
       flex-direction: column;
       justify-content: flex-end;
     }
-    .pcard-graphic { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+    .pcard-graphic { position: absolute; inset: 0; z-index: 0; overflow: hidden; transition: transform 0.55s ease; }
+    .pcard:hover .pcard-graphic { transform: scale(1.04); }
+    .pcard--bristol .pcard-graphic {
+      background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .pcard--bess .pcard-graphic {
+      background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=80');
+      background-size: cover;
+      background-position: center;
+    }
     .pcard-overlay {
       position: absolute;
       inset: 0;
@@ -1675,7 +1693,8 @@
 ═══════════════════════════════════════════════════════════ -->
 <section id="hero" aria-label="Hero">
 
-  <div class="hero-bg-gradient" aria-hidden="true"></div>
+  <div class="hero-photo"         aria-hidden="true"></div>
+  <div class="hero-bg-gradient"   aria-hidden="true"></div>
   <div class="hero-grid-pattern"  aria-hidden="true"></div>
   <div class="hero-glow-top"      aria-hidden="true"></div>
   <div class="hero-glow-bottom"   aria-hidden="true"></div>
@@ -2383,15 +2402,15 @@
     <div class="projects-grid">
 
       <!-- BRISTOL CITY LEAP — primary card -->
-      <div class="pcard reveal">
+      <div class="pcard pcard--bristol reveal">
         <div class="pcard-graphic">
           <svg width="100%" height="100%" viewBox="0 0 700 500" preserveAspectRatio="xMidYMid slice"
                fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <linearGradient id="bristolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%"   stop-color="#070E1A"/>
-                <stop offset="55%"  stop-color="#1C3254"/>
-                <stop offset="100%" stop-color="#0C2218"/>
+                <stop offset="0%"   stop-color="rgba(7,14,26,0.55)"/>
+                <stop offset="55%"  stop-color="rgba(28,50,84,0.45)"/>
+                <stop offset="100%" stop-color="rgba(12,34,24,0.40)"/>
               </linearGradient>
             </defs>
             <rect width="700" height="500" fill="url(#bristolGrad)"/>
@@ -2477,14 +2496,14 @@
       </div>
 
       <!-- ATLANTIC GREEN BESS — secondary card -->
-      <div class="pcard pcard--sm reveal reveal-delay-1">
+      <div class="pcard pcard--sm pcard--bess reveal reveal-delay-1">
         <div class="pcard-graphic">
           <svg width="100%" height="100%" viewBox="0 0 420 500" preserveAspectRatio="xMidYMid slice"
                fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <linearGradient id="bessGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%"   stop-color="#040A14"/>
-                <stop offset="100%" stop-color="#0A2218"/>
+                <stop offset="0%"   stop-color="rgba(4,10,20,0.55)"/>
+                <stop offset="100%" stop-color="rgba(10,34,24,0.45)"/>
               </linearGradient>
             </defs>
             <rect width="420" height="500" fill="url(#bessGrad)"/>
