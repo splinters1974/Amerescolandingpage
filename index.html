@@ -140,19 +140,22 @@
     }
 
     /* ─── SCROLL ANIMATIONS ──────────────────────────────────── */
+    /* Reveal: visible by default; JS adds .js-anim to html to enable animation */
     .reveal {
-      opacity: 0;
-      transform: translateY(28px);
       transition: opacity 0.65s ease, transform 0.65s ease;
     }
-    .reveal.visible {
+    .js-anim .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    .js-anim .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-1 { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+    .reveal-delay-3 { transition-delay: 0.32s; }
+    .reveal-delay-4 { transition-delay: 0.42s; }
 
     /* ═══════════════════════════════════════════════════════════
        NAVIGATION
@@ -2188,7 +2191,876 @@
   </div>
 </section>
 
-<!-- Chunks 3–5 will be appended below -->
+<!-- ═══════════════════════════════════════════════════════════
+     CHUNK 3 — DELIVERY MODEL
+═══════════════════════════════════════════════════════════ -->
+<section id="delivery" aria-labelledby="delivery-title">
+  <div class="delivery-inner">
+
+    <div class="delivery-hdr reveal">
+      <span class="eyebrow">Our Approach</span>
+      <h2 id="delivery-title" class="section-title">From Commitment to Carbon Zero</h2>
+      <p>Ameresco doesn't hand you a report and walk away. We own every stage of the journey — from the first audit to decades of operation — ensuring accountability, performance and value at each step. One partner. Total responsibility.</p>
+    </div>
+
+    <div class="delivery-steps">
+
+      <div class="dstep reveal">
+        <div class="dstep-node">
+          <span class="dstep-num">Step 01</span>
+          <span class="dstep-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/>
+              <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="8" y1="11" x2="14" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="11" y1="8" x2="11" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </div>
+        <h4 class="dstep-title">Assess</h4>
+        <p class="dstep-desc">Deep-dive energy audits, site surveys and baseline carbon analysis. We quantify every opportunity before committing a penny of yours or ours.</p>
+      </div>
+
+      <div class="dstep reveal reveal-delay-1">
+        <div class="dstep-node">
+          <span class="dstep-num">Step 02</span>
+          <span class="dstep-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M20.71 5.63l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83a1 1 0 0 0 0-1.41Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <h4 class="dstep-title">Design</h4>
+        <p class="dstep-desc">Full engineering design, technology selection and financial modelling — bespoke to your objectives, estate profile and long-term budget.</p>
+      </div>
+
+      <div class="dstep reveal reveal-delay-2">
+        <div class="dstep-node">
+          <span class="dstep-num">Step 03</span>
+          <span class="dstep-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="2" y="6" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="currentColor" stroke-width="1.8"/>
+              <line x1="12" y1="11" x2="12" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="9.5" y1="13.5" x2="14.5" y2="13.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </div>
+        <h4 class="dstep-title">Finance</h4>
+        <p class="dstep-desc">ESCO contracts, off-balance-sheet structures, grant navigation and blended finance. Capital barriers removed — the deal works for your organisation.</p>
+      </div>
+
+      <div class="dstep reveal reveal-delay-3">
+        <div class="dstep-node">
+          <span class="dstep-num">Step 04</span>
+          <span class="dstep-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M2 20h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M4 20V10l6-6 6 6v10" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <rect x="9" y="13" width="6" height="7" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M14 4h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <h4 class="dstep-title">Build</h4>
+        <p class="dstep-desc">Turnkey EPC delivery — project management, supply chain, grid connections and commissioning, all handled end-to-end without passing the baton.</p>
+      </div>
+
+      <div class="dstep reveal reveal-delay-4">
+        <div class="dstep-node">
+          <span class="dstep-num">Step 05</span>
+          <span class="dstep-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </div>
+        <h4 class="dstep-title">Operate</h4>
+        <p class="dstep-desc">Long-term O&amp;M, 24/7 remote monitoring and guaranteed performance. We stay invested in outcomes — not just outputs — for the life of the contract.</p>
+      </div>
+
+      <div class="dstep reveal reveal-delay-4">
+        <div class="dstep-node">
+          <span class="dstep-num">Step 06</span>
+          <span class="dstep-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="16 7 22 7 22 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <h4 class="dstep-title">Optimise</h4>
+        <p class="dstep-desc">Continuous energy analytics, demand management and technology refresh. Your assets improve over time — not just maintained, but made better.</p>
+      </div>
+
+    </div><!-- /delivery-steps -->
+
+    <div class="delivery-strip reveal">
+      <p>"We offer <span>contractual performance guarantees</span> — if the energy savings don't materialise, we make up the shortfall. That accountability is written into every project we sign."</p>
+      <a href="#contact" class="btn btn-green">
+        Request a Feasibility Study
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHUNK 3 — FLAGSHIP PROJECTS
+═══════════════════════════════════════════════════════════ -->
+<section id="projects" aria-labelledby="projects-title">
+  <div class="projects-inner">
+
+    <div class="projects-hdr reveal">
+      <div>
+        <span class="eyebrow">Proof of Delivery</span>
+        <h2 id="projects-title" class="section-title">Flagship UK Projects</h2>
+      </div>
+      <a href="#contact" class="btn btn-ghost-green">View All Projects</a>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- BRISTOL CITY LEAP — primary card -->
+      <div class="pcard reveal">
+        <div class="pcard-graphic">
+          <svg width="100%" height="100%" viewBox="0 0 700 500" preserveAspectRatio="xMidYMid slice"
+               fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="bristolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"   stop-color="#070E1A"/>
+                <stop offset="55%"  stop-color="#1C3254"/>
+                <stop offset="100%" stop-color="#0C2218"/>
+              </linearGradient>
+            </defs>
+            <rect width="700" height="500" fill="url(#bristolGrad)"/>
+            <!-- city skyline silhouette -->
+            <rect x="0"   y="310" width="55"  height="190" fill="rgba(255,255,255,0.04)"/>
+            <rect x="60"  y="250" width="75"  height="250" fill="rgba(255,255,255,0.05)"/>
+            <rect x="145" y="280" width="45"  height="220" fill="rgba(255,255,255,0.04)"/>
+            <rect x="200" y="200" width="110" height="300" fill="rgba(255,255,255,0.06)"/>
+            <rect x="320" y="270" width="65"  height="230" fill="rgba(255,255,255,0.04)"/>
+            <rect x="395" y="235" width="85"  height="265" fill="rgba(255,255,255,0.05)"/>
+            <rect x="490" y="285" width="55"  height="215" fill="rgba(255,255,255,0.04)"/>
+            <rect x="555" y="255" width="90"  height="245" fill="rgba(255,255,255,0.04)"/>
+            <rect x="650" y="300" width="50"  height="200" fill="rgba(255,255,255,0.03)"/>
+            <!-- windows -->
+            <rect x="210" y="215" width="12" height="10" fill="rgba(255,255,255,0.12)"/>
+            <rect x="228" y="215" width="12" height="10" fill="rgba(255,255,255,0.10)"/>
+            <rect x="246" y="215" width="12" height="10" fill="rgba(255,255,255,0.14)"/>
+            <rect x="210" y="232" width="12" height="10" fill="rgba(255,255,255,0.08)"/>
+            <rect x="228" y="232" width="12" height="10" fill="rgba(255,255,255,0.12)"/>
+            <rect x="400" y="250" width="10" height="8"  fill="rgba(255,255,255,0.10)"/>
+            <rect x="415" y="250" width="10" height="8"  fill="rgba(255,255,255,0.08)"/>
+            <rect x="430" y="250" width="10" height="8"  fill="rgba(255,255,255,0.12)"/>
+            <!-- district heat network lines -->
+            <path d="M100,460 Q200,400 310,375 Q420,350 530,330 Q610,315 700,300"
+                  stroke="rgba(66,182,73,0.45)" stroke-width="2.5" stroke-dasharray="10 5"/>
+            <path d="M0,430 Q120,385 240,355 Q360,325 480,305 Q580,288 700,268"
+                  stroke="rgba(66,182,73,0.22)" stroke-width="1.5" stroke-dasharray="7 6"/>
+            <!-- heat network nodes -->
+            <circle cx="310" cy="375" r="6" fill="#42B649" opacity="0.8"/>
+            <circle cx="530" cy="330" r="6" fill="#42B649" opacity="0.8"/>
+            <circle cx="170" cy="418" r="5" fill="#42B649" opacity="0.6"/>
+            <circle cx="430" cy="320" r="5" fill="#42B649" opacity="0.55"/>
+            <!-- solar panels top-right -->
+            <g transform="translate(540,60)" opacity="0.35">
+              <rect x="0"  y="0"  width="20" height="13" stroke="#42B649" stroke-width="1" fill="rgba(66,182,73,0.05)"/>
+              <rect x="24" y="0"  width="20" height="13" stroke="#42B649" stroke-width="1" fill="rgba(66,182,73,0.05)"/>
+              <rect x="48" y="0"  width="20" height="13" stroke="#42B649" stroke-width="1" fill="rgba(66,182,73,0.05)"/>
+              <rect x="0"  y="17" width="20" height="13" stroke="#42B649" stroke-width="1" fill="rgba(66,182,73,0.05)"/>
+              <rect x="24" y="17" width="20" height="13" stroke="#42B649" stroke-width="1" fill="rgba(66,182,73,0.05)"/>
+              <rect x="48" y="17" width="20" height="13" stroke="#42B649" stroke-width="1" fill="rgba(66,182,73,0.05)"/>
+              <line x1="34" y1="0" x2="34" y2="-12" stroke="#42B649" stroke-width="1"/>
+              <line x1="0"  y1="-6" x2="68" y2="-6" stroke="rgba(66,182,73,0.5)" stroke-width="0.7"/>
+            </g>
+            <!-- wind turbine suggestion top-left -->
+            <g transform="translate(60,50)" opacity="0.3">
+              <line x1="12" y1="10" x2="12" y2="60" stroke="#42B649" stroke-width="1.5"/>
+              <ellipse cx="12" cy="10" rx="2" ry="18" fill="none" stroke="#42B649" stroke-width="1" transform="rotate(-30 12 10)"/>
+              <ellipse cx="12" cy="10" rx="2" ry="18" fill="none" stroke="#42B649" stroke-width="1" transform="rotate(90 12 10)"/>
+              <ellipse cx="12" cy="10" rx="2" ry="18" fill="none" stroke="#42B649" stroke-width="1" transform="rotate(210 12 10)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="pcard-overlay"></div>
+        <div class="pcard-body">
+          <span class="pcard-badge">Live · Bristol, UK · 20-Year Concession</span>
+          <h3 class="pcard-title">Bristol City Leap</h3>
+          <p class="pcard-desc">The UK's most ambitious city decarbonisation concession. A 20-year public-private partnership with Bristol City Council, delivering solar, wind, heat networks, heat pumps and energy efficiency upgrades across the entire city — with Ameresco and Vattenfall Heat UK as delivery partners.</p>
+          <div class="pcard-stats">
+            <div>
+              <div class="ps-val">£1bn+</div>
+              <div class="ps-lbl">Total investment</div>
+            </div>
+            <div>
+              <div class="ps-val">2030</div>
+              <div class="ps-lbl">Net Zero target</div>
+            </div>
+            <div>
+              <div class="ps-val">1,000</div>
+              <div class="ps-lbl">New jobs created</div>
+            </div>
+            <div>
+              <div class="ps-val">£500M</div>
+              <div class="ps-lbl">First 5 years</div>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-green">
+            Read the Case Study
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ATLANTIC GREEN BESS — secondary card -->
+      <div class="pcard pcard--sm reveal reveal-delay-1">
+        <div class="pcard-graphic">
+          <svg width="100%" height="100%" viewBox="0 0 420 500" preserveAspectRatio="xMidYMid slice"
+               fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="bessGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"   stop-color="#040A14"/>
+                <stop offset="100%" stop-color="#0A2218"/>
+              </linearGradient>
+            </defs>
+            <rect width="420" height="500" fill="url(#bessGrad)"/>
+            <!-- grid lines -->
+            <line x1="0" y1="100" x2="420" y2="100" stroke="rgba(66,182,73,0.07)" stroke-width="1"/>
+            <line x1="0" y1="200" x2="420" y2="200" stroke="rgba(66,182,73,0.07)" stroke-width="1"/>
+            <line x1="0" y1="300" x2="420" y2="300" stroke="rgba(66,182,73,0.07)" stroke-width="1"/>
+            <line x1="0" y1="400" x2="420" y2="400" stroke="rgba(66,182,73,0.07)" stroke-width="1"/>
+            <line x1="105" y1="0" x2="105" y2="500" stroke="rgba(66,182,73,0.07)" stroke-width="1"/>
+            <line x1="210" y1="0" x2="210" y2="500" stroke="rgba(66,182,73,0.07)" stroke-width="1"/>
+            <line x1="315" y1="0" x2="315" y2="500" stroke="rgba(66,182,73,0.07)" stroke-width="1"/>
+            <!-- battery pack units -->
+            <rect x="30"  y="160" width="65" height="120" rx="5" stroke="rgba(66,182,73,0.55)" stroke-width="1.5" fill="rgba(66,182,73,0.04)"/>
+            <rect x="108" y="160" width="65" height="120" rx="5" stroke="rgba(66,182,73,0.55)" stroke-width="1.5" fill="rgba(66,182,73,0.04)"/>
+            <rect x="186" y="160" width="65" height="120" rx="5" stroke="rgba(66,182,73,0.55)" stroke-width="1.5" fill="rgba(66,182,73,0.04)"/>
+            <rect x="264" y="160" width="65" height="120" rx="5" stroke="rgba(66,182,73,0.55)" stroke-width="1.5" fill="rgba(66,182,73,0.04)"/>
+            <rect x="342" y="160" width="50" height="120" rx="5" stroke="rgba(66,182,73,0.35)" stroke-width="1.5" fill="rgba(66,182,73,0.03)"/>
+            <!-- battery fill levels (animated) -->
+            <rect x="34"  y="220" width="57" height="56" rx="3" fill="rgba(66,182,73,0.38)">
+              <animate attributeName="height" values="56;68;56" dur="5s" repeatCount="indefinite"/>
+              <animate attributeName="y"      values="220;208;220" dur="5s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="112" y="208" width="57" height="68" rx="3" fill="rgba(66,182,73,0.45)">
+              <animate attributeName="height" values="68;50;68" dur="4.5s" repeatCount="indefinite"/>
+              <animate attributeName="y"      values="208;226;208" dur="4.5s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="190" y="228" width="57" height="48" rx="3" fill="rgba(66,182,73,0.32)">
+              <animate attributeName="height" values="48;72;48" dur="6s" repeatCount="indefinite"/>
+              <animate attributeName="y"      values="228;204;228" dur="6s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="268" y="215" width="57" height="61" rx="3" fill="rgba(66,182,73,0.42)">
+              <animate attributeName="height" values="61;44;61" dur="5.5s" repeatCount="indefinite"/>
+              <animate attributeName="y"      values="215;232;215" dur="5.5s" repeatCount="indefinite"/>
+            </rect>
+            <!-- connection bus-bar -->
+            <path d="M62,160 L62,135 L378,135 L378,160"
+                  stroke="rgba(66,182,73,0.65)" stroke-width="2" fill="none"/>
+            <circle cx="220" cy="135" r="6" fill="rgba(66,182,73,0.7)">
+              <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <!-- energy output wave -->
+            <polyline points="0,380 52,355 105,370 157,335 210,352 262,322 315,348 368,318 420,340"
+                      stroke="rgba(66,182,73,0.55)" stroke-width="2" fill="none">
+              <animate attributeName="points"
+                values="0,380 52,355 105,370 157,335 210,352 262,322 315,348 368,318 420,340;
+                        0,360 52,340 105,355 157,318 210,338 262,308 315,330 368,302 420,322;
+                        0,380 52,355 105,370 157,335 210,352 262,322 315,348 368,318 420,340"
+                dur="4s" repeatCount="indefinite"/>
+            </polyline>
+            <!-- MW label -->
+            <text x="210" y="455" text-anchor="middle" fill="rgba(66,182,73,0.25)"
+                  font-family="Montserrat,sans-serif" font-weight="900" font-size="72" letter-spacing="-4">
+              300MW
+            </text>
+          </svg>
+        </div>
+        <div class="pcard-overlay"></div>
+        <div class="pcard-body">
+          <span class="pcard-badge">In Development · UK National Grid</span>
+          <h3 class="pcard-title">Atlantic Green BESS</h3>
+          <p class="pcard-desc">Partnering with Atlantic Green and Envision Energy to deploy one of the UK's most significant battery energy storage systems — providing critical grid flexibility as renewables capacity grows and dispatchable generation declines.</p>
+          <div class="pcard-stats">
+            <div>
+              <div class="ps-val">300MW</div>
+              <div class="ps-lbl">Power capacity</div>
+            </div>
+            <div>
+              <div class="ps-val">624MWh</div>
+              <div class="ps-lbl">Energy stored</div>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-ghost-white" style="color:white;border-color:rgba(255,255,255,0.4);">
+            Explore Grid-Scale Solutions
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /projects-grid -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHUNK 4 — WHY AMERESCO: PROMISE BANNER
+═══════════════════════════════════════════════════════════ -->
+<section id="why" aria-labelledby="why-title">
+
+  <!-- Full-width dark promise banner -->
+  <div class="why-promise">
+    <div class="why-promise-inner reveal">
+      <span class="eyebrow" style="color:var(--green-light);">The Ameresco Difference</span>
+      <h2 id="why-title" class="why-promise-title">
+        Our Risk.<br><span class="gtext">Your Results.</span>
+      </h2>
+      <p class="why-promise-sub">
+        Ameresco puts its own capital and reputation on the line. Every project carries contractual performance guarantees backed by a NYSE-listed balance sheet. We don't just build it — we own it, operate it and are accountable for it for the life of the partnership.
+      </p>
+      <div class="why-promise-btns">
+        <a href="#contact" class="btn btn-green">
+          Talk to Our Team
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#investors" class="btn btn-ghost-white">Investor Information</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 differentiator columns -->
+  <div class="why-diffs-wrap">
+    <div class="why-diffs">
+
+      <div class="why-diff reveal">
+        <div class="why-diff-num">01</div>
+        <h3>Performance Guaranteed</h3>
+        <p>We guarantee the energy savings and carbon reductions in every contract we sign. If targets aren't met, we make up the financial difference — no caveats, no small print, no excuses.</p>
+        <div class="why-diff-proof">Bristol City Leap: contractual net zero delivery by 2030</div>
+      </div>
+
+      <div class="why-diff reveal reveal-delay-1">
+        <div class="why-diff-num">02</div>
+        <h3>Finance Included</h3>
+        <p>No capital outlay required. Ameresco's ESCO contracts and concession structures allow organisations to decarbonise at scale without touching their capital budget — or their balance sheet.</p>
+        <div class="why-diff-proof">£1bn+ deployed in UK projects, off client balance sheets</div>
+      </div>
+
+      <div class="why-diff reveal reveal-delay-2">
+        <div class="why-diff-num">03</div>
+        <h3>Full Lifecycle Ownership</h3>
+        <p>We don't hand over and invoice. Ameresco designs, builds, owns and operates — one accountable partner for 20+ years, not a fragmented chain of contractors passing risk back and forth.</p>
+        <div class="why-diff-proof">Average Ameresco partnership term: 15–25 years</div>
+      </div>
+
+      <div class="why-diff reveal reveal-delay-3">
+        <div class="why-diff-num">04</div>
+        <h3>Proven at UK Scale</h3>
+        <p>Bristol City Leap. Atlantic Green BESS. Sonnedix Aria Solar Portfolio. We have the track record across every scale of UK decarbonisation — from single buildings to national grid infrastructure.</p>
+        <div class="why-diff-proof">NYSE: AMRC — financial strength to deliver and sustain</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Comparison table -->
+  <div class="why-compare">
+    <div class="compare-inner">
+      <div class="compare-hdr reveal">
+        <span class="eyebrow">Side by Side</span>
+        <h3 class="section-title">Traditional Approach vs. Ameresco</h3>
+      </div>
+      <div class="compare-table reveal">
+
+        <!-- Header row -->
+        <div class="compare-row compare-row--head">
+          <div class="compare-cell compare-cell--dim">What matters to your board</div>
+          <div class="compare-cell compare-cell--trad">Traditional route</div>
+          <div class="compare-cell compare-cell--amer">With Ameresco</div>
+        </div>
+
+        <div class="compare-row">
+          <div class="compare-cell compare-cell--dim">Capital required upfront</div>
+          <div class="compare-cell compare-cell--trad">
+            <span class="compare-icon-cross">✕</span> Your capital budget
+          </div>
+          <div class="compare-cell compare-cell--amer">
+            <span class="compare-icon-tick">✓</span> £0 — we finance it
+          </div>
+        </div>
+
+        <div class="compare-row">
+          <div class="compare-cell compare-cell--dim">Performance risk</div>
+          <div class="compare-cell compare-cell--trad">
+            <span class="compare-icon-cross">✕</span> Yours to carry
+          </div>
+          <div class="compare-cell compare-cell--amer">
+            <span class="compare-icon-tick">✓</span> Ours — contractual guarantee
+          </div>
+        </div>
+
+        <div class="compare-row">
+          <div class="compare-cell compare-cell--dim">Long-term accountability</div>
+          <div class="compare-cell compare-cell--trad">
+            <span class="compare-icon-cross">✕</span> Re-procure every few years
+          </div>
+          <div class="compare-cell compare-cell--amer">
+            <span class="compare-icon-tick">✓</span> Single partner for 20+ years
+          </div>
+        </div>
+
+        <div class="compare-row">
+          <div class="compare-cell compare-cell--dim">Complexity &amp; project management</div>
+          <div class="compare-cell compare-cell--trad">
+            <span class="compare-icon-cross">✕</span> You manage multiple contractors
+          </div>
+          <div class="compare-cell compare-cell--amer">
+            <span class="compare-icon-tick">✓</span> One accountable party
+          </div>
+        </div>
+
+        <div class="compare-row">
+          <div class="compare-cell compare-cell--dim">Net Zero credibility</div>
+          <div class="compare-cell compare-cell--trad">
+            <span class="compare-icon-cross">✕</span> Targets and aspirations
+          </div>
+          <div class="compare-cell compare-cell--amer">
+            <span class="compare-icon-tick">✓</span> Delivered &amp; measured outcomes
+          </div>
+        </div>
+
+        <div class="compare-row">
+          <div class="compare-cell compare-cell--dim">Scale of ambition</div>
+          <div class="compare-cell compare-cell--trad">
+            <span class="compare-icon-cross">✕</span> Limited by your procurement model
+          </div>
+          <div class="compare-cell compare-cell--amer">
+            <span class="compare-icon-tick">✓</span> City-wide to grid-scale
+          </div>
+        </div>
+
+      </div><!-- /compare-table -->
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHUNK 4 — INVESTOR SECTION
+═══════════════════════════════════════════════════════════ -->
+<section id="investors" aria-labelledby="investors-title">
+  <div class="investors-inner">
+
+    <!-- Left: thesis copy -->
+    <div class="investors-copy reveal">
+
+      <div class="inv-ticker-card">
+        <span class="inv-ticker-logo">NYSE</span>
+        <div class="inv-ticker-info">
+          <strong>AMRC &nbsp;—&nbsp; Ameresco, Inc.</strong>
+          <span>Publicly listed · Founded 2000 · HQ Framingham, MA</span>
+        </div>
+      </div>
+
+      <span class="eyebrow">For Investors</span>
+      <h2 id="investors-title" class="section-title">A Compelling UK Growth Story</h2>
+      <p class="section-body">The UK energy transition represents one of Europe's most significant infrastructure investment opportunities. Ameresco is positioned at its centre — with proven delivery capability, long-term contracted revenue and a policy environment that is accelerating demand across every market we serve.</p>
+
+      <div class="inv-thesis">
+
+        <div class="inv-thesis-item">
+          <div class="inv-thesis-num">01</div>
+          <div class="inv-thesis-content">
+            <h4>Long-Term Contracted Revenue</h4>
+            <p>Our ESCO and concession structures generate predictable, long-duration income streams — 15 to 25 years per project — with performance risk retained by Ameresco, not the client.</p>
+          </div>
+        </div>
+
+        <div class="inv-thesis-item">
+          <div class="inv-thesis-num">02</div>
+          <div class="inv-thesis-content">
+            <h4>UK Policy as a Structural Tailwind</h4>
+            <p>PSDS funding, Clean Power 2030, Net Zero 2050, the Heat and Buildings Strategy — the regulatory environment is not a headwind. It is mandating the very services Ameresco provides.</p>
+          </div>
+        </div>
+
+        <div class="inv-thesis-item">
+          <div class="inv-thesis-num">03</div>
+          <div class="inv-thesis-content">
+            <h4>ESG at the Core, Not the Margin</h4>
+            <p>Decarbonisation is our product — not a reporting overlay. Every pound of revenue Ameresco generates is directly tied to measurable carbon reduction, making us a genuine ESG-aligned investment.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="#contact" class="btn btn-green">
+        Request an Investor Briefing
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+    </div>
+
+    <!-- Right: metrics + policy tailwinds -->
+    <div class="reveal reveal-delay-2">
+
+      <div class="metrics-grid">
+
+        <div class="metric-card">
+          <div class="metric-val">25+</div>
+          <div class="metric-lbl">Years as a global ESCO</div>
+          <div class="metric-sub">Operating since 2000</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-val">£1bn+</div>
+          <div class="metric-lbl">Invested in UK projects</div>
+          <div class="metric-sub">Committed capital, long-term</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-val">20yr</div>
+          <div class="metric-lbl">Average concession term</div>
+          <div class="metric-sub">Predictable contracted revenue</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-val">300MW</div>
+          <div class="metric-lbl">Grid-scale storage deployed</div>
+          <div class="metric-sub">Atlantic Green BESS, UK</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-val">1,000+</div>
+          <div class="metric-lbl">Jobs created in the UK</div>
+          <div class="metric-sub">Bristol City Leap alone</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-val">6</div>
+          <div class="metric-lbl">Active UK market sectors</div>
+          <div class="metric-sub">From public estates to grid scale</div>
+        </div>
+
+        <!-- Full-width accent card -->
+        <div class="metric-card metric-card--accent">
+          <div>
+            <div class="metric-val">NYSE: AMRC</div>
+            <div class="metric-lbl">Publicly traded — full financial transparency and the balance sheet to deliver at scale</div>
+          </div>
+          <p>Ameresco's NYSE listing means institutional-grade governance, audited financials and the capital capacity to back long-term UK infrastructure commitments.</p>
+        </div>
+
+      </div>
+
+      <!-- Policy tailwinds -->
+      <div class="inv-policy">
+        <div class="inv-policy-title">UK Policy &amp; Regulatory Tailwinds</div>
+        <div class="inv-policy-tags">
+          <span class="inv-policy-tag">Net Zero 2050</span>
+          <span class="inv-policy-tag">Clean Power 2030</span>
+          <span class="inv-policy-tag">Public Sector Decarbonisation Scheme</span>
+          <span class="inv-policy-tag">Heat &amp; Buildings Strategy</span>
+          <span class="inv-policy-tag">Great British Energy</span>
+          <span class="inv-policy-tag">MEES Regulations</span>
+          <span class="inv-policy-tag">Grid Capacity Reforms</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHUNK 5 — FINAL CTA
+═══════════════════════════════════════════════════════════ -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="contact-inner">
+
+    <span class="contact-tag">Start the Conversation</span>
+
+    <h2 id="contact-title" class="contact-title">
+      Ready to Accelerate<br>Your Decarbonisation Journey?
+    </h2>
+
+    <p class="contact-sub">
+      Whether you're a public sector body seeking PSDS-funded transformation, a city exploring a long-term concession, an industrial operator reducing Scope 1 &amp; 2 emissions, or an investor looking at the UK energy transition — Ameresco has the expertise, the finance and the track record to deliver.
+    </p>
+
+    <div class="contact-buttons">
+      <a href="mailto:ukinfo@ameresco.com" class="btn btn-white">
+        Get In Touch
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#sectors" class="btn btn-outline-white" style="background:transparent;color:white;border:2px solid rgba(255,255,255,0.5);padding:14px 30px;border-radius:var(--radius-sm);font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.92rem;display:inline-flex;align-items:center;gap:8px;transition:all var(--transition);">
+        Explore Our Markets
+      </a>
+      <a href="#delivery" class="btn btn-outline-white" style="background:transparent;color:white;border:2px solid rgba(255,255,255,0.5);padding:14px 30px;border-radius:var(--radius-sm);font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.92rem;display:inline-flex;align-items:center;gap:8px;transition:all var(--transition);">
+        Our Approach
+      </a>
+    </div>
+
+    <div class="contact-options">
+      <div class="contact-option">
+        <div class="contact-option-label">Public Sector &amp; Cities</div>
+        <div class="contact-option-value">public@ameresco.com</div>
+      </div>
+      <div class="contact-option">
+        <div class="contact-option-label">Industrial &amp; Commercial</div>
+        <div class="contact-option-value">ic@ameresco.com</div>
+      </div>
+      <div class="contact-option">
+        <div class="contact-option-label">Investor Relations</div>
+        <div class="contact-option-value">investors@ameresco.com</div>
+      </div>
+      <div class="contact-option">
+        <div class="contact-option-label">Grid &amp; Generation</div>
+        <div class="contact-option-value">grid@ameresco.com</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHUNK 5 — FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <rect width="36" height="36" rx="7" fill="#42B649"/>
+            <path d="M20 6 L12 21 H17 L14 30 L26 16 H20.5 L24 6Z" fill="white"/>
+          </svg>
+          <span>AMER<em>ESCO</em> UK</span>
+        </div>
+        <p>Ameresco UK is a leading independent provider of energy efficiency, infrastructure upgrades, asset sustainability and renewable energy solutions — serving public sector, cities, industrial &amp; commercial and grid-scale markets across the United Kingdom.</p>
+        <div class="footer-social">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/company/ameresco" aria-label="Ameresco on LinkedIn" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <!-- Twitter / X -->
+          <a href="https://twitter.com/ameresco" aria-label="Ameresco on X" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <!-- NYSE -->
+          <a href="https://www.ameresco.com/investors/" aria-label="Ameresco investor relations" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+              <polyline points="16 7 22 7 22 13"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Markets</h4>
+        <ul>
+          <li><a href="#sectors">Public Sector</a></li>
+          <li><a href="#sectors">Cities &amp; Local Authorities</a></li>
+          <li><a href="#sectors">Industrial &amp; Commercial</a></li>
+          <li><a href="#sectors">Grid-Scale Generation</a></li>
+          <li><a href="#sectors">Data Centres</a></li>
+          <li><a href="#sectors">Microgrids</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#delivery">Energy Efficiency</a></li>
+          <li><a href="#delivery">Solar &amp; Storage</a></li>
+          <li><a href="#delivery">Heat Networks</a></li>
+          <li><a href="#delivery">ESCO Contracts</a></li>
+          <li><a href="#delivery">Microgrid-as-a-Service</a></li>
+          <li><a href="#delivery">Asset Management</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why">Why Ameresco</a></li>
+          <li><a href="#projects">Case Studies</a></li>
+          <li><a href="#investors">Investors (NYSE: AMRC)</a></li>
+          <li><a href="https://www.ameresco.com/uk/" target="_blank" rel="noopener">Ameresco Global</a></li>
+          <li><a href="#contact">Contact UK Team</a></li>
+        </ul>
+      </div>
+
+    </div><!-- /footer-top -->
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ameresco, Inc. All rights reserved. Ameresco UK Operations.</p>
+      <div class="footer-certifications">
+        <span class="footer-cert">ISO 14001</span>
+        <span class="footer-cert">ISO 50001</span>
+        <span class="footer-cert">CHAS Accredited</span>
+        <span class="footer-cert">NYSE: AMRC</span>
+      </div>
+      <p>
+        <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="#">Terms of Use</a> &nbsp;·&nbsp;
+        <a href="#">Modern Slavery Act</a>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Mobile nav overlay -->
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&times;</button>
+  <a href="#sectors"   onclick="closeMobileNav()">Markets</a>
+  <a href="#delivery"  onclick="closeMobileNav()">Our Approach</a>
+  <a href="#projects"  onclick="closeMobileNav()">Projects</a>
+  <a href="#why"       onclick="closeMobileNav()">Why Ameresco</a>
+  <a href="#investors" onclick="closeMobileNav()">Investors</a>
+  <a href="#contact"   onclick="closeMobileNav()" style="color:var(--green);">Get In Touch</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHUNK 5 — JAVASCRIPT
+═══════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Nav scroll state ──────────────────────────────────── */
+  const nav = document.getElementById('nav');
+  function handleScroll() {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  /* ── Mobile nav ────────────────────────────────────────── */
+  const hamburger    = document.getElementById('navHamburger');
+  const mobileNav    = document.getElementById('mobileNav');
+  const mobileClose  = document.getElementById('mobileNavClose');
+
+  function openMobileNav()  { mobileNav.classList.add('open');    document.body.style.overflow = 'hidden'; }
+  function closeMobileNav() { mobileNav.classList.remove('open'); document.body.style.overflow = ''; }
+  window.closeMobileNav = closeMobileNav;
+
+  if (hamburger)   hamburger.addEventListener('click', openMobileNav);
+  if (mobileClose) mobileClose.addEventListener('click', closeMobileNav);
+
+  /* ── Scroll-reveal (progressive enhancement) ──────────── */
+  const revealEls = document.querySelectorAll('.reveal');
+
+  function revealAll() {
+    revealEls.forEach((el) => el.classList.add('visible'));
+  }
+
+  if ('IntersectionObserver' in window) {
+    /* Only hide elements once we know JS + IO are working */
+    document.documentElement.classList.add('js-anim');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.05, rootMargin: '0px 0px 0px 0px' }
+    );
+    revealEls.forEach((el) => observer.observe(el));
+
+    /* Hard fallback: reveal everything after 1.5 s in case IO misfires */
+    setTimeout(revealAll, 1500);
+  } else {
+    revealAll();
+  }
+
+  /* ── Animated stat counters ────────────────────────────── */
+  function animateCounter(el, target, duration) {
+    const start     = performance.now();
+    const isFloat   = String(target).includes('.');
+    const decimals  = isFloat ? String(target).split('.')[1].length : 0;
+
+    function step(timestamp) {
+      const elapsed  = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease     = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const value    = target * ease;
+      el.textContent = isFloat
+        ? value.toFixed(decimals)
+        : Math.floor(value).toLocaleString();
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const counterEls = document.querySelectorAll('.stat-counter');
+  if ('IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const target = parseFloat(entry.target.dataset.target);
+            animateCounter(entry.target, target, 1800);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    counterEls.forEach((el) => counterObserver.observe(el));
+  }
+
+  /* ── Smooth-scroll for anchor links ────────────────────── */
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const offset = nav ? nav.offsetHeight : 72;
+      window.scrollTo({
+        top: target.getBoundingClientRect().top + window.scrollY - offset,
+        behavior: 'smooth',
+      });
+    });
+  });
+
+  /* Challenge stat cards are handled by the main reveal observer above */
+
+})();
+</script>
+
 
 </body>
 </html>
