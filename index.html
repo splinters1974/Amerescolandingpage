@@ -140,19 +140,22 @@
     }
 
     /* ─── SCROLL ANIMATIONS ──────────────────────────────────── */
+    /* Reveal: visible by default; JS adds .js-anim to html to enable animation */
     .reveal {
-      opacity: 0;
-      transform: translateY(28px);
       transition: opacity 0.65s ease, transform 0.65s ease;
     }
-    .reveal.visible {
+    .js-anim .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    .js-anim .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-1 { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+    .reveal-delay-3 { transition-delay: 0.32s; }
+    .reveal-delay-4 { transition-delay: 0.42s; }
 
     /* ═══════════════════════════════════════════════════════════
        NAVIGATION
@@ -2973,9 +2976,17 @@
   if (hamburger)   hamburger.addEventListener('click', openMobileNav);
   if (mobileClose) mobileClose.addEventListener('click', closeMobileNav);
 
-  /* ── Scroll-reveal (IntersectionObserver) ──────────────── */
+  /* ── Scroll-reveal (progressive enhancement) ──────────── */
   const revealEls = document.querySelectorAll('.reveal');
+
+  function revealAll() {
+    revealEls.forEach((el) => el.classList.add('visible'));
+  }
+
   if ('IntersectionObserver' in window) {
+    /* Only hide elements once we know JS + IO are working */
+    document.documentElement.classList.add('js-anim');
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -2985,11 +2996,14 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.05, rootMargin: '0px 0px 0px 0px' }
     );
     revealEls.forEach((el) => observer.observe(el));
+
+    /* Hard fallback: reveal everything after 1.5 s in case IO misfires */
+    setTimeout(revealAll, 1500);
   } else {
-    revealEls.forEach((el) => el.classList.add('visible'));
+    revealAll();
   }
 
   /* ── Animated stat counters ────────────────────────────── */
@@ -3042,28 +3056,7 @@
     });
   });
 
-  /* ── Challenge stat progress bars (animate on scroll) ─── */
-  const challengeStats = document.querySelectorAll('.challenge-stat');
-  if ('IntersectionObserver' in window && challengeStats.length) {
-    const statsObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity    = '1';
-            entry.target.style.transform  = 'translateY(0)';
-            statsObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-    challengeStats.forEach((el, i) => {
-      el.style.opacity   = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = `opacity 0.5s ease ${i * 0.12}s, transform 0.5s ease ${i * 0.12}s`;
-      statsObserver.observe(el);
-    });
-  }
+  /* Challenge stat cards are handled by the main reveal observer above */
 
 })();
 </script>
